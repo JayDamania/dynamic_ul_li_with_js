@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ul created by js</title>
+  </head>
+  <style></style>
+  <body>
+    <h2>ul & li elements created with js</h2>
+    <div id="container"></div>
+
+    <script>
+      var arr = ["status", "port", "navigation", "live", "creation"];
+      var cont = document.getElementById("container");
+
+      // create ul element and set the attributes.
+      var ul = document.createElement("ul");
+      ul.setAttribute("id", "theList");
+
+      for (i = 0; i <= arr.length - 1; i++) {
+        var li = document.createElement("li"); // create li element.
+        li.innerHTML = arr[i]; // assigning text to li using array value.
+
+        ul.appendChild(li); // append li to ul.
+      }
+      cont.appendChild(ul); // add list to the container.
+
+      document.querySelectorAll("ul li").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          console.log(e.target);
+          e.target.style.color = "blue";
+        });
+      });
+    </script>
+  </body>
+</html>
